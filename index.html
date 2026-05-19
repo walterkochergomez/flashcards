@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flashcards Alemán</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <!-- PANTALLA 1: Selección de palabras -->
+        <div id="selection-screen" class="screen">
+            <h1>Selecciona palabras para hoy</h1>
+            <p>Palabras para repasar hoy: <span id="due-count">0</span></p>
+            <div id="word-list"></div>
+            <button id="start-btn">Comenzar Sesión</button>
+        </div>
+
+        <!-- PANTALLA 2: Flashcards -->
+        <div id="study-screen" class="screen hidden">
+            <div class="progress-bar">Quedan: <span id="cards-left">0</span></div>
+            
+            <div class="flashcard-container" id="flashcard-container">
+                <div class="flashcard" id="flashcard">
+                    <!-- Frente de la tarjeta -->
+                    <div class="front">
+                        <h2 id="card-german">Verbo</h2>
+                    </div>
+                    <!-- Dorso de la tarjeta -->
+                    <div class="back">
+                        <h3 id="card-spanish">Significado</h3>
+                        <p><strong>Perfekt:</strong> <span id="card-perfekt"></span></p>
+                        <p><strong>Präteritum:</strong> <span id="card-prateritum"></span></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Botones de evaluación (ocultos hasta que se voltea la tarjeta) -->
+            <div id="evaluation-buttons" class="hidden">
+                <button class="btn-incorrect" onclick="evaluateCard(false)">Incorrecto (Repetir)</button>
+                <button class="btn-correct" onclick="evaluateCard(true)">Correcto (Bien)</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
